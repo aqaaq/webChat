@@ -2,6 +2,7 @@
 
 #### 介绍
 Vue + Socket.io + element-ui + axios + express + mongoose。一个简单的web聊天室。
+- 聊天记录都存储在本地，群离线消息存储在服务端
 - [在线体验](http://ooooo.plus:8080)
 
 
