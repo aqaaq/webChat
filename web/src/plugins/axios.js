@@ -1,8 +1,8 @@
 import axios from 'axios';
 import Vue from 'vue';
 
-Vue.prototype.$myUrl = '/';
-// Vue.prototype.$myUrl = 'http://localhost:3000';
+// Vue.prototype.$myUrl = '/';
+ Vue.prototype.$myUrl = 'http://localhost:3000';
 // console.log(Vue.prototype.$myUrl)
 const http = axios.create({
     baseURL: Vue.prototype.$myUrl,
