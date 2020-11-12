@@ -1,0 +1,67 @@
+body, div, li, ul, img, form, p, h1, h2, h3, h4, h5, input, span {
+	margin: 0;
+	padding: 0;
+}
+
+div, li, ul, form, p, h1, h2, h3, h4, h5, section, header, input, ul, li, span {
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+}
+
+.com_btn {
+	border: none;
+	outline: none;
+}
+
+.img {
+	width: 100%;
+}
+
+.arrows {
+	position: absolute;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	top: 10px;
+	left: -10px;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-right: 10px solid white;
+}
+
+.isMe .arrows {
+	left: auto;
+	right: -10px;
+	border-left: 10px solid white;
+	border-right: none;
+}
+
+.upload .avatar-uploader .el-upload {
+	border: 1px dashed #d9d9d9;
+	border-radius: 6px;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.upload .avatar-uploader .el-upload:hover {
+	border-color: #409eff;
+}
+
+.upload .avatar-uploader-icon {
+	font-size: 28px;
+	color: #8c939d;
+	width: 178px;
+	height: 178px;
+	line-height: 178px;
+	text-align: center;
+}
+
+.upload .avatar {
+	width: 178px;
+	height: 178px;
+	display: block;
+}

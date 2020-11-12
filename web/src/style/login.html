@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<style>
+			body,div,form,input{
+				box-sizing: border-box;
+			}
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			.main{
+				width: 100%;
+				height: 100vh;
+				background: url(./img/0.jpg) no-repeat center center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.input_box .title{
+				font-size: 35px;
+				letter-spacing: 5px;
+				padding: 20px 0;
+				display: inline-block;
+				color: white;
+				font-weight: 600;
+			}
+			.input_box .title strong{
+				display: inline-block;
+				transition: all 0.3s linear;
+				width: 50px;
+				height: 50px;
+				text-align: center;
+				border-radius: 50%;
+				background-color: #FF4500;
+			}
+			.form:hover .input_box .title strong:nth-of-type(1){
+				transform: rotate(360deg);
+			}
+			.form:hover .input_box .title strong:nth-of-type(2){
+				transform: rotate(-360deg);
+			}
+			.form{
+				text-align: center;
+				position: relative;
+				background: url(img/mask.png);
+				background-size: 100% 100%;
+				padding: 20px 30px;
+				border-radius: 10px;
+			}
+			.input_box label{
+				font-size: 18px;
+				color: white;
+				margin-right: 5px;
+			}
+			.input_box input:focus{
+				box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset, 
+				0 2px 7px 0 rgba(0,0,0,.2)
+			}
+			.item{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 15px 20px;
+			}
+			.item >label{
+				text-align: right;
+				margin-right: 15px;
+				flex-grow: 1;
+			}
+			.input_box .code{
+				width: 170px;
+			}
+			.item input{
+				background-color: #a4a4a4;
+				border-radius: 5px;
+				outline: none;
+				background: transparent;
+				color: white;
+				letter-spacing: 1.3px;
+				border: 1px solid rgba(255,255,255,.3);
+				width: 350px;
+				height: 45px;
+				text-indent: 10px;
+				font-size: 20px;
+			}
+			
+			.btn{
+				width: 100%;
+				height: 50px;
+				border-radius: 8px;
+				background: orangered;
+				color: white;
+				outline: none;
+				border: none;
+				display: block;
+				margin: auto;
+			}
+			.img{
+				height: 50px;
+			}
+			.code_{
+				width: 350px;
+				display: flex;
+				
+			}
+			.checkbox_{
+				font-size: 18px;
+				color: white;
+				padding: 10px 0;
+			}
+			.checkbox_ input{
+				width: 20px;
+				height: 20px;
+				vertical-align: middle;
+				outline: none;
+			}
+			button{
+				cursor: pointer;
+			}
+			.register{
+				display: inline-block;
+				color: white;
+				text-decoration: underline;
+				letter-spacing: 3px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<form class="form">
+				<div class="input_box">
+					<label class="title"> L <strong>o</strong> g <strong>i</strong> n </label>
+					<div class="item">
+						<label>管理员账号 :</label><input type="text" />
+					</div>
+					<div class="item">
+						<label>密码 :</label><input type="password" />
+					</div>
+					<div class="item">
+						<label>验证码 :</label>
+						<div class="code_">
+							<input class="code" type="password" />
+							<div>
+								<canvas id="text_code"></canvas>
+							</div>
+						</div>
+					</div>
+					<div class="checkbox_"> <input type="checkbox"> 记住密码</div>
+					<div class="item">
+						<button class="btn" type="submit">登录</button>
+					</div>
+					<span class="register">立即注册</span>
+				</div>
+			</form>
+		</div> 
+		<script>
+			const text_code = document.getElementById('text_code');
+			text_code.height = '45';
+			text_code.width = '180'
+			text_code.onclick = function() {
+				clearCanvas()
+			}
+			const ctx = text_code.getContext('2d');
+			ctx.font = '24px bold'
+			ctx.strokeStyle = 'aqua'
+			const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+				colors = ['red', 'green', 'black', 'blue', 'white', 'black', 'orange'];
+			let end = 23,
+				currStr;
+			clearCanvas();
+			function clearCanvas() {
+				ctx.clearRect(0, 0, 180, 45);
+				let str = '';
+				for (let i = 0; i <= 3; i++) {
+					let num = Math.round(Math.random() * 9 - 0),
+						start = i * 20 + 15;
+					end = Math.random() * 12 + 20;
+					str += num;
+					ctx.strokeStyle = colors[num];
+					ctx.strokeText(num, start, end);
+				}
+				currStr = str;
+			}
+			const form = document.forms[0];
+			form.onsubmit = function(e) {
+				e.preventDefault()
+				console.log(currStr)
+			}
+			
+		</script>
+	</body>
+</html>

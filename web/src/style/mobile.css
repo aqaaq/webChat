@@ -1,0 +1,64 @@
+@media screen and (max-width:500px) {
+    html {
+        font-size: 14px;
+    }
+    .form {
+        width: 90%;
+        padding: 15px 0 !important;
+        transform: translateY(-30px);
+    }
+    .input_box .title {
+        font-size: 2rem;
+        letter-spacing: 5px;
+        padding: 10px 0;
+        display: inline-block;
+        color: white;
+        font-weight: 600;
+        line-height: 30px;
+    }
+   .main .form  .item {
+        padding: 10px 10px;
+        justify-content: flex-start;
+    }
+    .item label {
+        width: 60px;
+    }
+    .input_box .title strong {
+        display: inline-block;
+        transition: all 0.3s linear;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #ff4500;
+    }
+    .input_box label {
+        font-size: 14px;
+        color: white;
+        margin-right: 5px;
+    }
+     .item input {
+        width: auto;
+        font-size: medium;
+        flex-grow: 1;
+    }
+    .input_box .code {
+        width: 100px;
+        /* flex-shrink: 1; */
+        flex-grow: 1;
+    }
+    .checkbox_ {
+        font-size: 14px;
+    }
+    .checkbox_ input {
+        width: 16px;
+        height: 16px;
+    }
+    .register {
+        font-size: 1rem;
+    }
+    .btn {
+        height: 40px;
+        width: 80%;
+    }
+}
