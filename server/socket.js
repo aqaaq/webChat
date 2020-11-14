@@ -1,6 +1,9 @@
 const User = require('./models/User');
 const Message = require('./models/Message');
 const Group = require('./models/Group');
+
+// 给群聊消息添加 no 标记
+// 群聊消息大小限制
 const initNo = function (datakey, data) {
     if (!chatData[datakey]) {
         chatData[datakey] = []
@@ -16,6 +19,7 @@ const initNo = function (datakey, data) {
     }
 }
 const { addFriend, setFriends, setApply } = require('./handler');
+
 //通知好友
 function inform(socket, list, eventName, data) {
     list.forEach((item, index) => {
